@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="characters-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>character-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="infoCharacter; else noInfo">
+    <ion-card>
+      <ion-card-content class='ion-text-center'>
+        <img src="{{infoCharacter.image}}" alt='{{infoCharacter.name}}' />
+        <ion-card-title>{{infoCharacter.name}}</ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #noInfo>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>No info</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>No info</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>
