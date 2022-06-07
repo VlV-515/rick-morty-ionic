@@ -8,14 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="infoCharacter; else noInfo">
-    <ion-card>
-      <ion-card-content class='ion-text-center'>
-        <img src="{{infoCharacter.image}}" alt='{{infoCharacter.name}}' />
-        <ion-card-title>{{infoCharacter.name}}</ion-card-title>
-      </ion-card-content>
-    </ion-card>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <div *ngIf="infoCharacter; else noInfo">
+          <ion-card>
+            <ion-card-content class='ion-text-center'>
+              <img src="{{infoCharacter.image}}" alt='{{infoCharacter.name}}' />
+              <ion-card-title>{{infoCharacter.name}}</ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ng-template #noInfo>
     <ion-card>
       <ion-card-header>

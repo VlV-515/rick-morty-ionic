@@ -8,15 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item
-      *ngFor="let character of characters"
-      [routerLink]="['/character-detail/' + character.id ]"
-    >
-      <ion-avatar slot="start">
-        <img [src]="character.image" />
-      </ion-avatar>
-      <ion-label>{{character.name}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <ion-list>
+          <ion-item
+            *ngFor="let character of characters"
+            [routerLink]="['/character-detail/' + character.id ]"
+          >
+            <ion-avatar slot="start">
+              <img [src]="character.image" />
+            </ion-avatar>
+            <ion-label>{{character.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
